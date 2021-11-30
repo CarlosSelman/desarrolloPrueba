@@ -17,41 +17,25 @@ function crearUsuario(req,res){
     var usuarioModel = new Usuario();
     var params = req.body;
 
-    if (params.nombres && params.apellidos) {
-        usuarioModel.nombres = params.nombres;
-        usuarioModel.apellidos = params.apellidos;
-        usuarioModel.fechaNacimiento = params.fechaNacimiento;
-        usuarioModel.estadoCivil = params.estadoCivil;
-        usuarioModel.gradoAcademico = params.gradoAcademico;
-        usuarioModel.direccion = params.direccion;
+    
+    usuarioModel.nombres = params.nombres;
+    usuarioModel.apellidos = params.apellidos;
+    usuarioModel.fechaNacimiento = params.fechaNacimiento;
+    usuarioModel.estadoCivil = params.estadoCivil;
+    usuarioModel.gradoAcademico = params.gradoAcademico;
+    usuarioModel.direccion = params.direccion;
 
-        Usuario.find({
-            $or: [
-                { usuario: usuarioModel.nombres },
-                { correo: usuarioModel.apellidos }
-            ]
-        }).exec((err, usuariosEncontrados) => {
-            if (err) return res.status(500).send({ mensaje: 'Error en la peticion del Usuario' })
+    usuarioModel.save((err, usuarioGuardado) => {
+        if (err) return res.status(500).send({ mensaje: 'Error al guardar el Usuario' })
 
-            if (usuariosEncontrados && usuariosEncontrados.length >= 1) {
-                return res.status(500).send({ mensaje: 'El usuario ya existe' })
-            } else {
-
-                usuarioModel.save((err, usuarioGuardado) => {
-                        if (err) return res.status(500).send({ mensaje: 'Error al guardar el Usuario' })
-
-                        //Guardando el usuario
-                        if (usuarioGuardado) {
-                            res.status(200).send(usuarioGuardado)
-                            console.log(params); 
-                        } else {
-                            res.status(404).send({ mensaje: 'No se ha podido registrar el Usuario' })
-                        }
-                    })
-                
-            }
-        })
-    }
+        //Guardando el usuario
+        if (usuarioGuardado) {
+        res.status(200).send(usuarioGuardado)
+            console.log(params); 
+        } else {
+            res.status(404).send({ mensaje: 'No se ha podido registrar el Usuario' })
+        }
+    })      
 }
 
 
@@ -90,7 +74,6 @@ function eliminarUsuario(req, res) {
         return res.status(200).send({ usuarioEliminado });
     })
 }
-
 
 
 module.exports = {
