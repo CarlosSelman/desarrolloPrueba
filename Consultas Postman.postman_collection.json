@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "c8d2eb62-b410-4091-9896-8431e8012145",
+		"name": "Consultas Postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Obtener Colaboradores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/obtenerUsuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"obtenerUsuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Colaborador",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "Carlos Andres",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "Selman David",
+							"type": "text"
+						},
+						{
+							"key": "fechaNacimiento",
+							"value": "28/12/2002",
+							"type": "text"
+						},
+						{
+							"key": "estadoCivil",
+							"value": "Soltero",
+							"type": "text"
+						},
+						{
+							"key": "gradoAcademico",
+							"value": "Diversificado",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "Zona 7 Guatemala",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/crearUsuario",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"crearUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Colaborador",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombres",
+							"value": "C A",
+							"type": "text"
+						},
+						{
+							"key": "apellidos",
+							"value": "S D",
+							"type": "text"
+						},
+						{
+							"key": "fechaNacimiento",
+							"value": "28/12/2000",
+							"type": "text"
+						},
+						{
+							"key": "estadoCivil",
+							"value": "Casado",
+							"type": "text"
+						},
+						{
+							"key": "gradoAcademico",
+							"value": "Universitario",
+							"type": "text"
+						},
+						{
+							"key": "direccion",
+							"value": "Zona 4 Guatemala",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/editarUsuario/61a66bbe36bcc22128b0f60f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"editarUsuario",
+						"61a66bbe36bcc22128b0f60f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Colaborador",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/eliminarUsuario/61a66bbe36bcc22128b0f60f",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"eliminarUsuario",
+						"61a66bbe36bcc22128b0f60f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Colaborador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/obtenerUsuario/61a66d7faf40f059b7481e94",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"obtenerUsuario",
+						"61a66d7faf40f059b7481e94"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
