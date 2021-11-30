@@ -106,7 +106,11 @@ export class InicioComponent implements AfterViewInit {
     //Validación
       if(
         this.user.nombres===""||
-        this.user.apellidos===""
+        this.user.apellidos===""||
+        this.user.fechaNacimiento===""||
+        this.user.estadoCivil===""||
+        this.user.gradoAcademico ===""||
+        this.user.direccion ===""
         ){
         //Alerta para que se llenen todos los campos
         Swal.fire({
@@ -156,8 +160,11 @@ export class InicioComponent implements AfterViewInit {
     //Validación
       if(
         this.idUsuarioModel.nombres===""||
-        this.idUsuarioModel.apellidos===""
-       
+        this.idUsuarioModel.apellidos===""||
+        this.idUsuarioModel.fechaNacimiento===""||
+        this.idUsuarioModel.estadoCivil===""||
+        this.idUsuarioModel.gradoAcademico ===""||
+        this.idUsuarioModel.direccion ===""
       ){
         //Alerta para que se llenen todos los campos
         Swal.fire({
